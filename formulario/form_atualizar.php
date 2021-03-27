@@ -14,7 +14,7 @@
 <body>
 
 	<?php 
-
+	//verificar se foi enviado via GET, chama a função, e atribui os resultados a variável $resultado
 	if (isset($_GET['atualizar'])) {
 
 		$resultado = $aluno->SelectUnit($_GET['atualizar']);
@@ -44,7 +44,8 @@
 			<form method="POST" id="atualizar" autocomplete="off" action="atualizar.php" title="Caixa de seleção para escolher o aluno a ser atualizado">
 		        <p> ID aluno:
 		            <select name="cd_aluno" onclick="buscaDados()" id="cd_aluno" required="">
-
+				
+				<!-- Exibe o valor enviado por $_GET no select -->
 		                <option value="<?php echo $_GET['atualizar'] ?>"> <?php echo $_GET['atualizar'] ?> </option>
 
 		                <?php foreach($linhas as $key): ?>
@@ -53,9 +54,10 @@
 		            </select>
 		        
 		        </p>
-				<p> Nome: <input type="text" name="nome" id="nome" size=30 required="" value="<?php echo $resultado->nome ?>"" title="Campo para atualizar o nome do aluno"> </p>
-				
+				<!-- value recebe o nome e endereço -->
+				<p> Nome: <input type="text" name="nome" id="nome" size=30 required="" value="<?php echo $resultado->nome ?>" title="Campo para atualizar o nome do aluno"> </p>	
 				<p> Endereço: <input type="text" name="endereco" id="endereco" size=30 required=""  value="<?php echo $resultado->endereco ?>" title="Campo para atualizar o endereço do aluno"> </p>
+				
 				<button name="Atualizar"> Atualizar </button>
 			</form>
 	</fieldset>
