@@ -38,7 +38,7 @@
 			} 
 		}
 		
-
+		//funcão para buscar somente 1 aluno
 		public function SelectUnit($cd_aluno) {
 
 			$sql = "SELECT * FROM $this->tabela WHERE cd_aluno = :cd_aluno";
