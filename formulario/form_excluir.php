@@ -18,7 +18,8 @@
 	<?php 
 
 	if (isset($_GET['excluir'])) {
-
+		
+		//verificar se foi enviado via GET, chama a função, e atribui os resultados a variável $resultado
 		$resultado = $aluno->SelectUnit($_GET['excluir']);
 
 	}
@@ -37,7 +38,8 @@
 			<form method="POST" id="excluir" autocomplete="off" action="../formulario/excluir.php" title="Caixa de seleção para escolher o aluno a ser excluído">
 				<p> ID aluno:
 					<select name="cd_aluno" required="">
-
+						
+						<!--mesmo esquema do artualizar
 						<option value="<?php echo $_GET['excluir'] ?>"> <?php echo $_GET['excluir'] ?> </option>
 
 			  			<?php foreach($linhas as $key): ?>
